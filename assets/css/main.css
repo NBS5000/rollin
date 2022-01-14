@@ -1,0 +1,107 @@
+body{
+    margin: 0;
+    background-color: rgb(249, 192  , 0)
+}
+.container {
+    overflow: hidden;
+    margin: 0;
+}
+
+/***** BB8 *****/
+.bb8{
+    margin-top: 10px;
+    padding-left: 200px;
+    clear: both;
+}
+.bb_body{
+    animation: spin 1.5s linear infinite;
+
+    z-index: 5;
+    margin: 0;  
+}
+.bb_head{
+    padding-left: 50px;
+    position: absolute;
+    float: left;
+    margin-top: -100px;
+    z-index: 7;
+    transform: rotate(13deg);
+}
+
+/***** BB8 Bouncing *****/
+.bounce {
+    animation: MoveUpDown 0.5s linear infinite;
+    position: absolute;
+    -webkit-transition: all 0.1s cubic-bezier(0.1, -5.55, 0.5, 5.55);
+    transition:         all 0.1s cubic-bezier(0.1, -5.55, 0.5, 5.55);
+    z-index: 5;
+    margin: 0;
+}    
+
+/***** Background *****/
+.slidingBgTrees {
+    background-image: url("../images/trees.png");
+    height: 400px;
+    width: 5076px;
+    animation: slide 30s linear infinite;
+    float:left;
+    margin-top: -400px;
+}  
+.sliding-background2 {
+    background: url("../images/mid.png");
+    height: 450px;
+    width: 5076px;
+    animation: slide 15s linear infinite;
+    float:left;
+    z-index: 2;
+    margin-top: -50px;
+}
+.slidingBgFore {
+    background: url("../images/fore.png");
+    height: 200px;
+    width: 5076px;
+    animation: slide 5s linear infinite;
+    float:left;
+    z-index: 3;
+    margin-top: -200px;
+}
+.slidingBgSky {
+    background: url("../images/sky.png");
+    height: 400px;
+    width: 5076px;
+    animation: slide 60s linear infinite;
+    float:left;
+    z-index: 3;
+    margin-top: -50px;
+}
+
+/****** Keyframes ******/
+
+/***** Background moving *****/
+@keyframes slide {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-1692px, 0, 0);
+    }
+}
+/***** BB8 bouncing *****/
+@keyframes MoveUpDown {
+    0%, 100% {
+        padding-top: 0;
+    }
+    50% {
+        padding-top: 5px;
+    }
+}
+/***** BB8 spinning*****/
+@-moz-keyframes spin { 
+    100% { -moz-transform: rotate(360deg); } 
+}
+@-webkit-keyframes spin { 
+    100% { -webkit-transform: rotate(360deg); } 
+}
+@keyframes spin { 
+    100% { transform:rotate(360deg); }
+}
